@@ -1,6 +1,6 @@
 // connect to db
 // {
-//     "mongoURI": "mongodb+srv://nide:jesus123@cluster0.jugcf.mongodb.net/elysiumdb?retryWrites=true&w=majority"
+//     "mongoURI": "mongodb://localhost:27017/elysiumdb",
 // }
 
 const mongoose = require("mongoose");
