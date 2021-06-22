@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/backend/node_modules
+/client/node_modules
 /.pnp
 .pnp.js
 
@@ -11,6 +11,7 @@
 
 # production
 /build
+/client/build
 
 # misc
 .DS_Store
@@ -24,9 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # Images
-/src/images/not_used
-/src/images/Projects
-/src/images/new
+/client/src/images/not_used
+/client/src/images/Projects
+/client/src/images/new
 
 # not used
-/unused
+/client/unused
