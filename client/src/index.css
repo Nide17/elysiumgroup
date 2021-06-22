@@ -631,7 +631,7 @@ ul.social-buttons li {
 }
 
 .media-left img {
-  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 75% 0%, 95% 50%, 75% 100%, 0% 100%);
 }
 
 .about-section h4 {

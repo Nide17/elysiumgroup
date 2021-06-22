@@ -1,11 +1,9 @@
 import React from 'react';
 import { Media } from 'reactstrap';
-
 import { useEffect } from "react";
 
 // REDUX
 import { connect } from "react-redux";
-
 import { setMembers } from "../redux/members/members.actions";
 
 function RenderMembers({ members }) {
@@ -17,7 +15,7 @@ function RenderMembers({ members }) {
                 <Media left>
                     <Media object src={member.memberImage} alt={member.memberName} style={{ paddingRight: "10px" }} />
                 </Media>
-                <Media body>
+                <Media body className="my-auto">
                     <Media heading>
                         {member.memberName}
                     </Media>
@@ -120,4 +118,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
-
