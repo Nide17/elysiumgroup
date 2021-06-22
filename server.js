@@ -1,16 +1,18 @@
 const express = require('express');
+// Bring in all dependencies
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+// const config = require('config')
 const connectDB = require('./config/db');
 
 const app = express();
 
-// Connect DB
-connectDB();
-
 // Init Middleware - deprecated body parser
 app.use(express.json({ extended: false }))
 
-// Test the server via get request to send the browser
-app.get('/', (req, res) => res.send('API Running'));
+// Connect DB
+connectDB();
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
@@ -19,6 +21,19 @@ app.use('/api/clients', require('./routes/api/clients'));
 app.use('/api/posts', require('./routes/api/posts'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/services', require('./routes/api/services'));
+
+//Edit for deployment || serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+
+    //Set a static folder for frontend build
+    app.use(express.static('client/build'));
+
+    //anything coming will be redirected here
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+    //Let's create a post build script in package.json
+}
 
 const PORT = process.env.PORT || 5000;
 
