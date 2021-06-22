@@ -71,7 +71,7 @@ const About = (props) => {
                     </div>
 
                     <div className="w-50 mx-auto">
-                        <h4 className="ml-2 mt-lg-5">Our Core Values</h4>
+                        <h4 className="ml-2">Our Core Values</h4>
                         <table class="table font-weight-bold">
 
                             <tbody>
@@ -93,7 +93,7 @@ const About = (props) => {
                 </div>
 
                 <div className="row">
-                    <div className="col-12 mt-5" style={{display: "flex", justifyContent:"center"}}>
+                    <div className="col-12 mt-2" style={{display: "flex", justifyContent:"center"}}>
                         <RenderMembers members={props.members} />
                     </div>
                 </div>
