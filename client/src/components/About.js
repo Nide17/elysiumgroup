@@ -63,28 +63,34 @@ const About = (props) => {
 
                 <div className="row mt-3">
                     <div className="col-12 col-sm-6">
-                        <h4>Our Objectives</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
+                        <h4>Our Mission</h4>
+                        <p>Providing high quality and cost effective Consultancy Services in time to our clients by keeping strong team spirit, innovation and dynamism</p>
                     </div>
+
                     <div className="col-12 col-sm-6">
                         <h4>Our Mission</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
+                        <p>Providing high quality and cost effective Consultancy Services in time to our clients by keeping strong team spirit, innovation and dynamism</p>
                     </div>
-                    <div className="col-12 col-sm-6">
-                        <h4>Our Vision</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
-                    </div>
-                    <div className="col-12 col-sm-6">
-                        <h4>Our Values</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
+                    <div className="w-50 mx-auto">
+                        <h4 className="ml-2 mt-lg-5">Our Core Values</h4>
+                        <table class="table font-weight-bold">
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eligendi vero quam fuga dicta eveniet aliquid! Illo et pariatur maxime?</p>
+                            <tbody>
+                                <tr>
+                                    <td className="border-0">Teamwork </td>
+                                    <td className="border-0">Ethical</td>
+                                </tr>
+                                <tr>
+                                    <td className="border-0">Synergy</td>
+                                    <td className="border-0">Professionalism</td>
+                                </tr>
+                                <tr>
+                                    <td className="border-0">Innovation</td>
+                                    <td className="border-0">Dynamism</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
