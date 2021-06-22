@@ -63,8 +63,8 @@ const About = (props) => {
 
                 <div className="row mt-3">
                     <div className="col-12 col-sm-6">
-                        <h4>Our Mission</h4>
-                        <p>Providing high quality and cost effective Consultancy Services in time to our clients by keeping strong team spirit, innovation and dynamism</p>
+                        <h4>Our Vision</h4>
+                        <p>Our Vision is to be a competent international Consultancy Institution.</p>
                     </div>
 
                     <div className="col-12 col-sm-6">
