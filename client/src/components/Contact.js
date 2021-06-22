@@ -36,7 +36,7 @@ class Contact extends Component {
                     <div className="row">
 
                         <div className="col-12 elysium-title-wrapper">
-                            <h1 className="elysium-title">ELYSIUM GROUP LTD</h1>
+                            <h1 className="elysium-title">ELYSIUM GROUP</h1>
                             <h3>Contact us</h3>
                         </div>
 

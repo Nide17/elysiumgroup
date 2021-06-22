@@ -1,4 +1,4 @@
-ELYSIUM GROUP LTD WEBSITE
+ELYSIUM GROUP WEBSITE
 ---------------------------
 
 This website was designed to provide all information related and affiliated with "Elysium Group".

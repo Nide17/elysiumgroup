@@ -27,7 +27,7 @@ const sData = [
         sName: 'Roads & Railway Activities',
         sTitle: "road",
         sSrc: road2,
-        sDetails: 'At Elysium Group ltd, we provide also excellent roads and railways construction services. We also provide quantity surveying services related with roads and railways professionally. We also have a consultancy team that can help you with your projects and ideas.'
+        sDetails: 'At Elysium Group, we provide also excellent roads and railways construction services. We also provide quantity surveying services related with roads and railways professionally. We also have a consultancy team that can help you with your projects and ideas.'
     },
     {
         id: 3,

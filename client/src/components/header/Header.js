@@ -90,7 +90,7 @@ const Header = (props) => {
 
                     <div className="logo-container">
                         <a href="/" className="logo-text logo-url">
-                            Elysium Group Ltd
+                            Elysium Group
                         </a>
                     </div>
 
