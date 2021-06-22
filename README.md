@@ -3,7 +3,7 @@ ELYSIUM GROUP LTD WEBSITE
 
 This website was designed to provide all information related and affiliated with "Elysium Group Ltd".
 
-Elysium Group Ltd is a company based in Rwanda, Kigali in Kicukiro District which provides various services and products.
+Elysium Group is a company based in Rwanda, Kigali in Kicukiro District which provides various services and products.
 
 
 - mongo as a service: net start MongoDB

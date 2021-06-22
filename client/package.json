@@ -1,9 +1,6 @@
 {
   "name": "elysiumltd",
   "version": "0.1.0",
-  "engines": {
-    "node": "14.x"
-  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -31,13 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "backend-install": "npm install --prefix backend",
-    "server": "nodemon server.js --exec babel-node --presets babel-preset-env",
-    "backend": "npm run server --prefix backend",
-    "dev": "concurrently \"npm start\" \"npm run backend\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
