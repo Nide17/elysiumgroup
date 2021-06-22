@@ -1,4 +1,3 @@
-const express = require('express');
 // Bring in all dependencies
 const express = require('express');
 const mongoose = require('mongoose');
