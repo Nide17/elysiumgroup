@@ -34,7 +34,7 @@ body {
 .carousel-section .container {
   margin-left: auto;
   margin-right: auto;
-  padding:0;
+  padding: 0;
 }
 
 .container::after {
@@ -441,6 +441,29 @@ li {
   z-index: 3;
 }
 
+.carousel-item h4 {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: rgb(11, 97, 194);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #f0ad4e;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-name: slideheader;
+}
+
+@keyframes slideheader {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 .carousel-item p {
   color: #1686c2;
   font-weight: 900px;
@@ -448,14 +471,21 @@ li {
   background: #e2b624;
   padding: 5px;
   border-radius: 25px;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-name: slidepg;
 }
 
-.carousel-item h4 {
-  font-weight: 900;
-  font-size: 1.8rem;
-  color: rgb(11, 97, 194);
-  text-transform: uppercase;
-  text-shadow: 2px 2px 2px #f0ad4e;
+@keyframes slidepg {
+  from {
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 /* CONTENT */
@@ -675,7 +705,7 @@ h1.elysium-title {
 }
 
 .carousel-item img {
-  opacity: .8;
+  opacity: .9;
 }
 
 .carousel-item img:hover {
