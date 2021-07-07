@@ -13,7 +13,7 @@ const SlideCarousel = () => {
 
     return (
         <section className="carousel-section">
-            <div className="carousel-container container">
+            <div className="carousel-container">
                 <div className="row">
 
                     <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
