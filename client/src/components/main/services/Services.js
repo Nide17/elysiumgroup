@@ -1,7 +1,4 @@
-import React from "react";
-
-import { useEffect } from "react";
-
+import React, { useEffect } from "react";
 // REDUX
 import { connect } from "react-redux";
 import { setServices } from "../../../redux/services/services.actions";

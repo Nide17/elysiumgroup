@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Model from './ThreeDotsModel';
-
-import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 // REDUX for dispatching service action
 import { connect } from "react-redux";
@@ -16,7 +15,9 @@ const Header = (props) => {
         props.setProjects();
     });
 
-    let headerClassName = 'header-section';
+    const location = useLocation()
+
+    let headerClassName = 'header-section pt-2 pt-lg-4 pb-3';
     let classNameNav = 'main-menu';
 
     let menuProjectsLinkClassName = 'main-link projects-link header__subnav-control';
@@ -88,22 +89,39 @@ const Header = (props) => {
                         </button>
                     </div>
 
-                    <div className="logo-container">
+                    <div className="logo-container text-center d-flex justify-content-center">
                         <a href="/" className="logo-text logo-url">
                             Elysium Group
                         </a>
+                        <div className="elysgp">
+                            <p className="eg-title">ELYSIUM GROUP</p>
+                            <p className="eg-moto">SYNERGY&nbsp;<span>|</span>&nbsp;INNOVATION&nbsp;<span>|</span>&nbsp;EXCELLENCE</p>
+                        </div>
                     </div>
 
                     <nav id="mySidenav" className={classNameNav} style={{ height: props.openMenu ? props.contentHeight : '' }}>
                         <ul className="menu-list">
                             <li>
-                                <a href="/about" className="main-link">
+                                <a href="/" 
+                                className="main-link" 
+                                    style={{ borderBottom: location.pathname === "/" ? "2px solid #f0ad4e" : null}}>
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/about" 
+                                className="main-link"
+                                    style={{ borderBottom: location.pathname === "/about" ? "2px solid #f0ad4e" : null }}>
                                     About Us
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/" className={menuServicesLinkClassName} onClick={props.showServices}>
+                                <a href="/" 
+                                className={menuServicesLinkClassName} 
+                                onClick={props.showServices}
+                                    style={{ borderBottom: location.pathname === "/services" ? "2px solid #f0ad4e" : null }}>
                                     Services
                                 </a>
 
@@ -137,7 +155,10 @@ const Header = (props) => {
                             </li>
 
                             <li>
-                                <a href="/" className={menuProjectsLinkClassName} onClick={props.showProjects}>
+                                <a href="/" 
+                                className={menuProjectsLinkClassName} 
+                                onClick={props.showProjects}
+                                    style={{ borderBottom: location.pathname === "/projects" ? "2px solid #f0ad4e" : null }}>
                                     Projects
                                 </a>
 
@@ -169,7 +190,9 @@ const Header = (props) => {
                             </li>
 
                             <li>
-                                <a href="/contact" className="main-link">
+                                <a href="/contact" 
+                                className="main-link"
+                                    style={{ borderBottom: location.pathname === "/contact" ? "2px solid #f0ad4e" : null }}>
                                     Contact Us
                                 </a>
                             </li>
