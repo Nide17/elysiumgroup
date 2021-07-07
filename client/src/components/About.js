@@ -1,6 +1,7 @@
 import React from 'react';
 import { Media } from 'reactstrap';
 import { useEffect } from "react";
+import Clients from './Clients'
 
 // REDUX
 import { connect } from "react-redux";
@@ -104,6 +105,17 @@ const About = (props) => {
                         <RenderMembers members={props.members} />
                     </div>
                 </div>
+
+
+                <div className="row">
+
+                    <div className="col-12 elysium-clients">
+                        <h3>Our Clients</h3>
+
+                        <Clients />
+
+            </div>
+            </div>
 
             </div>
 

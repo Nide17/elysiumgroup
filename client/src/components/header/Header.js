@@ -85,7 +85,7 @@ const Header = (props) => {
                     <div className="contain-btn">
                         <button className="btn-menu small-button" type="button" onClick={props.menuOpened}>
                             Menu
-                    </button>
+                        </button>
                     </div>
 
                     <div className="logo-container">
@@ -96,6 +96,12 @@ const Header = (props) => {
 
                     <nav id="mySidenav" className={classNameNav} style={{ height: props.openMenu ? props.contentHeight : '' }}>
                         <ul className="menu-list">
+                            <li>
+                                <a href="/about" className="main-link">
+                                    About Us
+                                </a>
+                            </li>
+
                             <li>
                                 <a href="/" className={menuServicesLinkClassName} onClick={props.showServices}>
                                     Services
@@ -112,7 +118,7 @@ const Header = (props) => {
                                             <span className="closer-mobile">
                                                 <button href="/#" className="closer" onClick={props.showServices}>
                                                     {/* header__subnav-control */}
-                                            Services</button>
+                                                    Services</button>
                                             </span>
 
                                             <div className="submenu-cols">
@@ -133,7 +139,7 @@ const Header = (props) => {
                             <li>
                                 <a href="/" className={menuProjectsLinkClassName} onClick={props.showProjects}>
                                     Projects
-                            </a>
+                                </a>
 
                                 <div className="submenu-wrapper" id="submenu-Projects" style={{
                                     display:
@@ -146,8 +152,8 @@ const Header = (props) => {
                                             <span className="closer-mobile">
                                                 <button href="/#" className="closer" onClick={props.showProjects}>
                                                     {/* header__subnav-control */}
-                                        Projects
-                                        </button>
+                                                    Projects
+                                                </button>
                                             </span>
 
                                             <div className="submenu-cols">
@@ -163,19 +169,9 @@ const Header = (props) => {
                             </li>
 
                             <li>
-                                <a href="/clients" className="main-link">
-                                    Clients
-                            </a>
-                            </li>
-                            <li>
-                                <a href="/about" className="main-link">
-                                    About
-                            </a>
-                            </li>
-                            <li>
                                 <a href="/contact" className="main-link">
-                                    Contact
-                            </a>
+                                    Contact Us
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -211,4 +207,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-

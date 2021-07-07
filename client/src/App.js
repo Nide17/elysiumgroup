@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Main from "./components/main/Main";
-import Clients from "./components/Clients";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from './components/admin/Login';
@@ -63,8 +62,7 @@ const App = (props) => {
               />
             )}
           />
-
-          <Route path="/clients" component={Clients} />
+          
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
         </Switch>

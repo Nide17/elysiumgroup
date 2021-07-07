@@ -11,8 +11,8 @@ const Main = (props) => {
                 isServices={props.isServices}
                 isProjects={props.isProjects}
             />
-            <Services />
-            <Projects />
+            {/* <Services />
+            <Projects /> */}
         </div>
     )
 }

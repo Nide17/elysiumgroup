@@ -118,8 +118,8 @@ class Contact extends Component {
                                         <div className="form-check">
                                             <Control.checkbox model=".updates" id="updateCheck" name="updates" className="form-check-input" />
                                             <label className="form-check-label" htmlFor="updateCheck">
-                                                Wish to receive monthly updates
-                                    </label>
+                                                Wish to receive updates from Elysium Group
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
