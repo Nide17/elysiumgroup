@@ -711,6 +711,12 @@ ul.social-buttons li {
 
 .media-left img {
   clip-path: polygon(0% 0%, 75% 0%, 95% 50%, 75% 100%, 0% 100%);
+  border: 3px solid #000;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .about-section h4 {
