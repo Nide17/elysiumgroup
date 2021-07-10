@@ -20,7 +20,7 @@ const Footer = (props) => {
     return (
 
         <footer className="footer">
-            <div className="footer-container container py-4">
+            <div className="footer-container container py-lg-4">
 
                 <div className="row footer-menu">
                     <div className="col-12 col-sm-6 col-xl-2" id="reach-us">
@@ -36,16 +36,16 @@ const Footer = (props) => {
                         </ul>
                     </div>
 
-                    <div className="col-6 col-sm-6 col-xl-2">
+                    <div className="col-6 col-sm-6 col-xl-2 p-1">
                         <h4>Contacts</h4>
                         <ul>
-                            <li><i className="fa fa-phone fa-lg"></i>&nbsp;+250788889242</li>
-                            <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>ntizanyiobed@gmail.com</small></li>
+                            <li><i className="fa fa-phone fa-lg"></i>&nbsp;0788889242</li>
+                            <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>elysiumgroup@gmail.com</small></li>
                             <li><i className="fa fa-map-marker"></i> &nbsp; KK 40 St, Kigali</li>
                         </ul>
                     </div>
 
-                    <div className="col-6 col-sm-6 col-xl-4">
+                    <div className="col-6 col-sm-6 col-xl-4 p-1">
                         <MapContainer />
                     </div>
 

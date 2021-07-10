@@ -42,7 +42,9 @@ body {
 }
 
 .carousel-section {
-  box-shadow: 5px 5px 1px #ccc
+box-shadow: -2px 6px 7px -3px rgba(0, 112, 186, 0.75);
+-webkit-box-shadow: -2px 6px 7px -3px rgba(0, 112, 186, 0.75);
+-moz-box-shadow: -2px 6px 7px -3px rgba(0, 112, 186, 0.75);
 }
 
 .container::after {
@@ -752,6 +754,19 @@ h1.elysium-title {
 
 .carousel-item img {
   opacity: .9;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-name: carouselImage;
+}
+
+@keyframes carouselImage {
+  from {
+  opacity: .3;
+  }
+
+  to {
+  opacity: .9;
+  }
 }
 
 .carousel-item img:hover {
@@ -1391,4 +1406,30 @@ h1.elysium-title {
     opacity: .8 !important;
   }
 
+  .footer-container {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  .footer .footer-menu h4 {
+    font-weight: 900;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
+
+ .footer .footer-menu ul li {
+line-height: 1.4;
+ }
+
+ .footer .footer-menu ul li a {
+     font-size: .8rem;
+     line-height: .9;
+     font-weight: 400;
+ }
+
+ .footer .footer-menu #reach-us ul {
+  margin-bottom: 8px;
+ }
+  }
