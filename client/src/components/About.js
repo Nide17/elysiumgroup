@@ -24,9 +24,24 @@ function RenderMembers({ members }) {
                         {member.designation}
                     </h6>
                     <b>{member.memberPhone}</b>
-                    <p>
-                        {member.memberDescription}
-                    </p>
+                    <div id="accordion" className="details">
+                        <div class="card">
+
+                            <div class="card-header w-100 m-0 p-0 d-flex justify-content-center" id="headingOne">
+                                    <button class="btn btn-link p-0 mx-auto" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        View Details
+                                    </button>
+                            </div>
+
+                            <div id="collapseOne" class="collapse w-100" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>
+                                        {member.memberDescription}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </Media>
             </Media>
         )
@@ -84,16 +99,16 @@ const About = (props) => {
 
                             <tbody>
                                 <tr>
-                                    <td className="border-0">Teamwork </td>
-                                    <td className="border-0">Ethical</td>
+                                    <td className="border-0">👉 Teamwork </td>
+                                    <td className="border-0">👉 Ethical</td>
                                 </tr>
                                 <tr>
-                                    <td className="border-0">Synergy</td>
-                                    <td className="border-0">Professionalism</td>
+                                    <td className="border-0">👉 Synergy</td>
+                                    <td className="border-0">👉 Professionalism</td>
                                 </tr>
                                 <tr>
-                                    <td className="border-0">Innovation</td>
-                                    <td className="border-0">Dynamism</td>
+                                    <td className="border-0">👉 Innovation</td>
+                                    <td className="border-0">👉 Dynamism</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,7 +116,7 @@ const About = (props) => {
                 </div>
 
                 <div className="row">
-                    <div className="col-12 mt-2" style={{ display: "flex", justifyContent: "center" }}>
+                    <div className="col-12 mt-2 members" style={{ display: "flex", justifyContent: "center" }}>
                         <RenderMembers members={props.members} />
                     </div>
                 </div>
@@ -114,8 +129,8 @@ const About = (props) => {
 
                         <Clients />
 
-            </div>
-            </div>
+                    </div>
+                </div>
 
             </div>
 
