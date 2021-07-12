@@ -16,7 +16,7 @@ const Clients = (props) => {
         // , pClient, pDate, pLocation, pDescription
         return (
 
-            <div className="col-12 col-sm-6 col-lg-3 mb-3" key={id}>
+            <div className="col-12 col-md-4 col-xl-3 mb-3 col-7" key={id}>
                 <div className="card card-body bg-light py-0" id={pKey}>
 
                     <div className="card-header">
@@ -40,7 +40,7 @@ const Clients = (props) => {
     return (
         <section className="clients-section" id="clients">
 
-            <div className="container clients-container">
+            <div className="clients-container">
 
                 <div className="row">
 

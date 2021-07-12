@@ -543,8 +543,7 @@ li {
 .services-section .container,
 .projects-section .container,
 .contacts-section .container,
-.about-section .container,
-.clients-section .container {
+.about-section .container {
   margin-left: auto;
   margin-right: auto;
   padding-left: 48px;
@@ -741,7 +740,6 @@ ul.social-buttons li {
   border-bottom: 1px solid rgba(201, 5, 5, 0.125);
 }
 
-
 .about-section p {
   font-size: 1.1rem;
   font-weight: 500;
@@ -872,6 +870,18 @@ h1.elysium-title {
 .redirection a {
   text-decoration: none;
   color: #f0ad4e;
+}
+
+.clients-section .card-header {
+  padding: .2rem 1rem;
+  margin-bottom: 0;
+  background-color: rgb(246, 250, 250);
+}
+
+.clients-section .card-header small {
+  font-weight: 800;
+  font-size: .66rem;
+  line-height: .8;
 }
 
 /* LARGE SCREENS */
@@ -1363,8 +1373,7 @@ h1.elysium-title {
   .services-section .container,
   .projects-section .container,
   .contacts-section .container,
-  .about-section .container,
-  .clients-section .container {
+  .about-section .container {
     padding-left: 10px;
     padding-right: 10px;
     max-width: 100%;
@@ -1505,4 +1514,8 @@ h1.elysium-title {
     font-size: .8rem;
     color: #2a7fb8;
   }
+
+    .clients-section img {
+      width: 100%!important;
+    }
 }
