@@ -38,7 +38,7 @@ const Clients = (props) => {
     });
 
     return (
-        <section className="clients-section">
+        <section className="clients-section" id="clients">
 
             <div className="container clients-container">
 

@@ -20,13 +20,13 @@ const Footer = (props) => {
     return (
 
         <footer className="footer">
-            <div className="footer-container container py-lg-4">
+            <div className="footer-container p-2 p-lg-4">
 
                 <div className="row footer-menu">
                     <div className="col-12 col-sm-6 col-xl-2" id="reach-us">
 
-                        <h4 className="text-center">We are social</h4>
-                        <ul className="social-buttons d-lg-flex justify-content-center">
+                        <h4 className="text-center">Get in touch</h4>
+                        <ul className="social-buttons d-lg-flex justify-content-center mt-lg-4">
 
                             {props.iconsData.map((icon) => {
                                 return (
@@ -41,25 +41,25 @@ const Footer = (props) => {
                         <ul>
                             <li><i className="fa fa-phone fa-lg"></i>&nbsp;0788889242</li>
                             <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>elysiumgroup@gmail.com</small></li>
-                            <li><i className="fa fa-map-marker"></i> &nbsp; KK 40 St, Kigali</li>
+                            <li><i className="fa fa-map-marker"></i>&nbsp;<small>KK 40 St, Kigali</small></li>
                         </ul>
                     </div>
 
-                    <div className="col-6 col-sm-6 col-xl-4 p-1">
+                    <div className="col-6 col-sm-6 col-xl-5 p-1">
                         <MapContainer />
                     </div>
 
-                    <div className="col-6 col-sm-3 col-xl-2">
-                        <h4>Information</h4>
+                    <div className="col-7 col-sm-3 col-xl-2">
+                        <h4>Business Hours</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-end">
-                            <li><Link to="/#">Terms of use</Link></li>
-                            <li><Link to="/#">Disclaimer</Link></li>
-                            <li><Link to="/#">Miscellaneous</Link></li>
+                            <li><Link to="/#">Monday - Friday : 8am - 5pm</Link></li>
+                            <li><Link to="/#">Saturday : 8am - 1pm</Link></li>
+                            <li><Link to="/#">Sunday : Closed</Link></li>
                         </ul>
                     </div>
 
-                    <div className="col-6 col-sm-3 col-xl-2">
-                        <h4>Links</h4>
+                    <div className="col-5 col-sm-3 col-xl-1">
+                        <h4>Explore</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-start">
                             <li><a href="/#services">Services</a></li>
                             <li><a href="/#projects">Projects</a></li>
@@ -73,7 +73,7 @@ const Footer = (props) => {
             <div className="row copyright">
                 <div className="col-12">
                     <p className="text-center mb-0">
-                        <strong> © 2021 Elysium Group - All Rights Reserved </strong>
+                        <strong>© 2021 Elysium Group - All Rights Reserved</strong>
                     </p>
                 </div>
             </div>

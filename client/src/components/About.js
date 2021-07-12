@@ -28,9 +28,9 @@ function RenderMembers({ members }) {
                         <div class="card">
 
                             <div class="card-header w-100 m-0 p-0 d-flex justify-content-center" id="headingOne">
-                                    <button class="btn btn-link p-0 mx-auto" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        View Details
-                                    </button>
+                                <button class="btn btn-link p-0 mx-auto" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    View Details
+                                </button>
                             </div>
 
                             <div id="collapseOne" class="collapse w-100" aria-labelledby="headingOne" data-parent="#accordion">
