@@ -8,29 +8,22 @@ const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
-class Contact extends Component {
+const Contact = () => {
 
-    constructor() {
-        super()
+    console.log(Errors);
+    const handleSubmit = (values) => {
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
 
-        // this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
+        // postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
 
         console.log(values);
 
-        // this.props.resetFeedbackForm();
+        // resetFeedbackForm();
     }
-
-    render() {
 
         return (
             <section className="contacts-section">
-
                 <div className="container contact-container">
 
                     <div className="row">
@@ -42,7 +35,7 @@ class Contact extends Component {
 
                         <div className="col-12 form-container">
 
-                            <Form id="contactForm" model="contacts" onSubmit={(values) => this.handleSubmit(values)}>
+                            <Form id="contactForm" model="contacts" onSubmit={(values) => handleSubmit(values)}>
 
                                 <div className="form-group row">
 
@@ -136,9 +129,7 @@ class Contact extends Component {
                         </div>
                     </div>
                 </div>
-            </section>
-        );
+            </section>);
     }
-}
 
 export default Contact;
