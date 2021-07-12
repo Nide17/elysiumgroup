@@ -1,10 +1,6 @@
-import React from "react";
-
-import { useEffect } from "react";
-
-// REDUX
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { setProjects } from "../../../redux/projects/projects.actions";
+import { setProjects } from "../../redux/projects/projects.actions";
 
 const Ongoing = (props) => {
   useEffect(() => {

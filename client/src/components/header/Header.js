@@ -55,7 +55,7 @@ const Header = (props) => {
 
             <ul className="submenu-col" key={id}>
                 <li>
-                    <a href={`/#${sTitle}`} >
+                    <a href={`/services/#${sTitle}`} >
                         {sName}
                     </a>
                 </li>
@@ -70,7 +70,7 @@ const Header = (props) => {
         return (
             <ul className="submenu-col" key={id}>
                 <li>
-                    <a href={`/#${pKey}`} >
+                    <a href={`/projects/#${pKey}`} >
                         {pName}
                     </a>
                 </li>
@@ -172,7 +172,6 @@ const Header = (props) => {
                                         <div className="header-section__subnav">
                                             <span className="closer-mobile">
                                                 <button href="/#" className="closer" onClick={props.showProjects}>
-                                                    {/* header__subnav-control */}
                                                     Projects
                                                 </button>
                                             </span>

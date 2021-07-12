@@ -4,6 +4,7 @@ import Ongoing from "./Ongoing";
 import Finished from "./Finished";
 
 const Projects = () => {
+  
   return (
     <section className="projects-section" id="projects">
       <div className="projects-container container">

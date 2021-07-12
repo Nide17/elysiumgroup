@@ -1,31 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import Main from "./components/main/Main";
 import About from "./components/about/About";
 import Contact from "./components/Contact";
 import Login from './components/admin/Login';
 import Register from './components/admin/Register';
+import Services from "./components/services/Services";
+import Projects from "./components/projects/Projects";
+import SlideCarousel from "./components/carousel/SlideCarousel";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-import { useEffect } from "react";
-
-// REDUX
 import { connect } from "react-redux";
-
-import {
-  openNav,
-  showServices,
-  showProjects,
-  handleClose,
-  setHeight,
-} from "./redux/app/app.actions";
+import { openNav, showServices, showProjects, handleClose, setHeight } from "./redux/app/app.actions";
 
 const App = (props) => {
 
   useEffect(() => {
-    // const contH = document.querySelector("body").clientHeight;
     props.setHeight(contH);
   });
 
@@ -39,8 +29,8 @@ const App = (props) => {
   return (
     <div id="content" className="App">
       <BrowserRouter>
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Header
           openMenu={props.menuOpen}
           contentHeight={contH}
@@ -51,18 +41,21 @@ const App = (props) => {
           closeHandler={props.closeHandler}
           menuOpened={props.openNav}
         />
+
         <Switch>
           <Route
             exact
             path="/"
             component={() => (
-              <Main
+              <SlideCarousel
                 isServices={props.isServices}
                 isProjects={props.isProjects}
               />
             )}
           />
-          
+
+          <Route path="/services" component={Services} />
+          <Route path="/projects" component={Projects} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
         </Switch>

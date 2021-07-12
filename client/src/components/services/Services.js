@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-// REDUX
 import { connect } from "react-redux";
-import { setServices } from "../../../redux/services/services.actions";
+import { setServices } from "../../redux/services/services.actions";
 
 const Services = (props) => {
 

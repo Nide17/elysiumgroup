@@ -35,16 +35,11 @@ body {
   padding-right: 0;
 }
 
-.contents-section,
 .about-section,
 .clients-section,
 .contacts-section {
   background: #edf5f7;
 }
-
-/* .contents-section {
-  clip-path: polygon(3% 0, 100% 0%, 97% 100%, 0% 100%);
-} */
 
 .contact-container div.form-container {
   padding: 36px 100px;

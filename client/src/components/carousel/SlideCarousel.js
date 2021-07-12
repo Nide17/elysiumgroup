@@ -1,13 +1,13 @@
 import React from 'react';
 
-import architecture1 from '../../../images/architecture4.jpg'
-import construction from '../../../images/construction.jpg'
-import road from '../../../images/road.jpg'
-import site from '../../../images/site.jpg'
-import electrical from '../../../images/electrical.jpg'
-import water from '../../../images/water.jpg'
-import accountants from '../../../images/accountants.jpg'
-import web4 from '../../../images/web4.jpg'
+import architecture1 from '../../images/architecture4.jpg'
+import construction from '../../images/construction.jpg'
+import road from '../../images/road.jpg'
+import site from '../../images/site.jpg'
+import electrical from '../../images/electrical.jpg'
+import water from '../../images/water.jpg'
+import accountants from '../../images/accountants.jpg'
+import web4 from '../../images/web4.jpg'
 
 const SlideCarousel = () => {
 

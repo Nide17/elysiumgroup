@@ -1,26 +1,19 @@
-import React from "react";
-
-import { useEffect } from "react";
-
-// REDUX
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { setProjects } from "../../../redux/projects/projects.actions";
+import { setProjects } from "../../redux/projects/projects.actions";
 
-const All = (props) => {
-
+const Finished = (props) => {
   useEffect(() => {
     // Inside this callback function we perform our side effects.
     props.setProjects();
   });
 
-  const allProjects = props.projects.map((proj) => {
+  const projectsFinshed = props.projects.map((proj) => {
+    const { id, pName, pSrc, pLocation, pKey, pDescription, pGallery, finished } = proj;
 
-    const { id, pName, pSrc, pKey, pLocation, pGallery, pDescription } = proj;
+    return finished ? (
 
-    return (
-
-      <div className="col-12 col-sm-6 col-xl-3 mb-3" key={id}>
-
+      <div className="col-12 col-sm-6 col-lg-3 mb-3" key={id}>
         <div className="card card-body bg-light" id={pKey}>
           <img
             className="card-img-top img-thumbnail rounded"
@@ -31,7 +24,7 @@ const All = (props) => {
           <div
             className="card-img-overlay"
           >
-            <button type="button" className="btn btn-outline-warning btn-sm" data-toggle="modal" data-target={`.${pKey}`}>
+            <button type="button" className="btn btn-outline-warning btn-sm" data-toggle="modal" data-target={`.finished${pKey}`}>
               View more ...
             </button>
           </div>
@@ -43,7 +36,7 @@ const All = (props) => {
         </div>
 
         {/* MODAL */}
-        <div className={`modal fade ${pKey}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div className={`modal fade finished${pKey}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 
           <div className="modal-dialog modal-xl">
             <div className="modal-content">
@@ -84,17 +77,13 @@ const All = (props) => {
         </div>
 
       </div>
-
-
-    );
-
+    ) : (
+        ""
+      );
   });
 
-  return <div className="row">
-    {allProjects}</div>;
-
+  return <div className="row">{projectsFinshed}</div>;
 };
-
 const mapStateToProps = (state) => {
   return {
     projects: state.projectsReducer.dataProjects,
@@ -107,4 +96,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(All);
+export default connect(mapStateToProps, mapDispatchToProps)(Finished);
