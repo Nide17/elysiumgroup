@@ -1,69 +1,11 @@
 import React from 'react';
-import { Media } from 'reactstrap';
-import { useEffect } from "react";
 import Clients from './Clients'
+import Members from './Members'
 
-// REDUX
-import { connect } from "react-redux";
-import { setMembers } from "../redux/members/members.actions";
-
-function RenderMembers({ members }) {
-
-    if (members != null) {
-        const membersAll = members.map(member =>
-
-            <Media key={member.id}>
-                <Media left>
-                    <Media object src={member.memberImage} alt={member.memberName} style={{ paddingRight: "10px" }} />
-                </Media>
-                <Media body className="my-auto">
-                    <Media heading>
-                        {member.memberName}
-                    </Media>
-                    <h6>
-                        {member.designation}
-                    </h6>
-                    <b>{member.memberPhone}</b>
-                    <div id="accordion" className="details">
-                        <div class="card">
-
-                            <div class="card-header w-100 m-0 p-0 d-flex justify-content-center" id="headingOne">
-                                <button class="btn btn-link p-0 mx-auto" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    View Details
-                                </button>
-                            </div>
-
-                            <div id="collapseOne" class="collapse w-100" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    <p>
-                                        {member.memberDescription}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Media>
-            </Media>
-        )
-
-        return (
-            <Media list>
-                {membersAll}
-            </Media>
-        );
-    }
-}
-
-const About = (props) => {
-
-    useEffect(() => {
-        // Inside this callback function we perform our side effects.
-        props.setMembers();
-    });
+const About = () => {
 
     return (
         <section className="about-section">
-
             <div className="container about-container">
 
                 <div className="row">
@@ -117,38 +59,17 @@ const About = (props) => {
 
                 <div className="row">
                     <div className="col-12 mt-2 members" style={{ display: "flex", justifyContent: "center" }}>
-                        <RenderMembers members={props.members} />
+                        <Members />
                     </div>
                 </div>
 
-
                 <div className="row">
-
-                    <div className="col-12 elysium-clients">
-                        <h3>Our Clients</h3>
-
-                        <Clients />
-
-                    </div>
+                    <div className="col-12 elysium-clients"><Clients /></div>
                 </div>
 
             </div>
 
-        </section>
-
-    );
+        </section>);
 }
 
-const mapStateToProps = (state) => {
-    return {
-        members: state.membersReducer.members,
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setMembers: () => dispatch(setMembers()),
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default About;

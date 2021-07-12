@@ -49,7 +49,7 @@ const Footer = (props) => {
                         <MapContainer />
                     </div>
 
-                    <div className="col-7 col-sm-3 col-xl-2">
+                    <div className="col-7 col-sm-3 col-xl-2 mt-3 mt-lg-0">
                         <h4>Business Hours</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-end">
                             <li><Link to="/#">Monday - Friday : 8am - 5pm</Link></li>
@@ -58,7 +58,7 @@ const Footer = (props) => {
                         </ul>
                     </div>
 
-                    <div className="col-5 col-sm-3 col-xl-1">
+                    <div className="col-5 col-sm-3 col-xl-1 mt-3 mt-lg-0">
                         <h4>Explore</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-start">
                             <li><a href="/#services">Services</a></li>

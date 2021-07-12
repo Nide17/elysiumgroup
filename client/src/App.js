@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Main from "./components/main/Main";
-import About from "./components/About";
+import About from "./components/about/About";
 import Contact from "./components/Contact";
 import Login from './components/admin/Login';
 import Register from './components/admin/Register';
