@@ -1,4 +1,4 @@
-import memberImg from '../../images/memberImage.png'
+// import memberImg from '../../images/memberImage.png'
 import obedImg from '../../images/obed.jpg'
 import parmenideImg from '../../images/parmenide.jpg'
 

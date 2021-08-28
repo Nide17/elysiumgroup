@@ -41,16 +41,16 @@ const About = () => {
 
                             <tbody>
                                 <tr>
-                                    <td className="border-0">👉 Teamwork </td>
-                                    <td className="border-0">👉 Ethical</td>
+                                    <td className="border-0"><span role="img" aria-label="emoji">👉 Teamwork</span></td>
+                                    <td className="border-0"><span role="img" aria-label="emoji">👉 Ethical</span></td>
                                 </tr>
                                 <tr>
-                                    <td className="border-0">👉 Synergy</td>
-                                    <td className="border-0">👉 Professionalism</td>
+                                    <td className="border-0"><span role="img" aria-label="emoji">👉 Synergy</span></td>
+                                    <td className="border-0"><span role="img" aria-label="emoji">👉 Professionalism</span></td>
                                 </tr>
                                 <tr>
-                                    <td className="border-0">👉 Innovation</td>
-                                    <td className="border-0">👉 Dynamism</td>
+                                    <td className="border-0"><span role="img" aria-label="emoji">👉 Innovation</span></td>
+                                    <td className="border-0"><span role="img" aria-label="emoji">👉 Dynamism</span></td>
                                 </tr>
                             </tbody>
                         </table>

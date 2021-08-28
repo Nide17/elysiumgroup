@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Control, Form, Errors } from 'react-redux-form';
 // actions
