@@ -748,13 +748,29 @@ ul.social-buttons li {
   font-weight: 900;
 }
 
+.about-section .member-phone {
+  vertical-align: text-bottom;
+  font-size: 1.2rem;
+}
+
+.about-section .fa-mobile-phone {
+  font-size: 36px;
+  vertical-align: middle;
+  color: #037ec0;
+}
+
 .about-section p {
   font-size: 1.1rem;
   font-weight: 500;
 }
 
+.about-section h3 {
+  font-weight: 900;
+}
+
 .about-section h4 {
   color: #2a7fb8;
+  font-weight: 900;
 }
 
 .about-section h6 {
@@ -1484,7 +1500,8 @@ h1.elysium-title {
   }
 
   .about-section h4.media-heading {
-    font-size: 1rem;
+    font-size: .8rem;
+    margin-bottom: 4px;
   }
 
   .about-section h6 {
@@ -1525,5 +1542,19 @@ h1.elysium-title {
 
   .clients-section img {
     width: 100% !important;
+  }
+
+  .about-section .member-phone {
+    font-size: .8rem;
+  }
+
+  .about-section .fa-mobile-phone {
+    font-size: 18px;
+    color: #037ec0;
+  }
+
+  .about-section #accordionElysium .btn-link {
+    font-size: .7rem;
+    line-height: .6;
   }
 }

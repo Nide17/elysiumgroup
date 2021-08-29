@@ -59,11 +59,11 @@ const Members = ({ setMembers, members }) => {
                     <Media heading>{member.memberName}</Media>
 
                     <h6>{member.designation}</h6>
-                    <p className="font-weight-bolder mt-2">
-                        <span><i class="fa fa-mobile-phone mr-2" style={{ fontSize: "36px", verticalAlign: "middle", color: "#037ec0" }}></i>
-                            <strong style={{verticalAlign: "text-bottom", fontSize:"1.2rem"}}>{member.memberPhone}</strong></span></p>
+                    <p className="font-weight-bolder m-0 mt-lg-2 mb-lg-3">
+                        <span><i class="fa fa-mobile-phone mr-2"></i>
+                            <strong className="member-phone">{member.memberPhone}</strong></span></p>
 
-                    <div id="accordionElysium" className="details mt-3">
+                    <div id="accordionElysium" className="details mt-1 mt-lg-3">
                         <div className="card">
                             <AccordionHeader value={member} />
                             <AccordionBody value={member} />

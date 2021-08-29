@@ -58,7 +58,7 @@ const About = () => {
                 </div>
 
                 <div className="row mt-lg-5">
-                    <h4 className="ml-2 mx-auto">Our Team</h4>
+                    <h3 className="ml-2 mx-auto">Our Team</h3>
                     <div className="col-12 mt-2 members" style={{ display: "flex", justifyContent: "center" }}>
                         <Members />
                     </div>
