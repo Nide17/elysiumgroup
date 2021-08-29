@@ -26,8 +26,9 @@ const Members = ({ setMembers, members }) => {
 
         return (
             <div className="card-header w-100 m-0 p-1 d-flex justify-content-center" id={`heading${memberName && memberName.split(' ').join('-')}`} onClick={collapseClick}>
+
                 <button className={collapsedClass} data-toggle="collapse" data-target={`#collapse${memberName && memberName.split(' ').join('-')}`} aria-expanded={ariaExpanded} aria-controls={`collapse${memberName && memberName.split(' ').join('-')}`} onClick={collapseClick} >
-                    View Details &nbsp;<i className={plusIcon}></i>
+                    View Biography &nbsp;<i className={plusIcon}></i>
                 </button>
             </div>)
     }
@@ -42,6 +43,7 @@ const Members = ({ setMembers, members }) => {
                 <div className="card-body"><p>{memberDescription}</p></div>
             </div>)
     }
+    
 
     if (members != null) {
         const membersAll = members.map(member =>
@@ -49,17 +51,19 @@ const Members = ({ setMembers, members }) => {
             <Media key={member.id}>
 
                 <Media left>
-                    <Media object src={member.memberImage} alt={member.memberName} style={{ paddingRight: "10px" }} />
+                    <Media object src={member.memberImage} alt={member.memberName} style={{ paddingRight: "10px" }} className="mr-lg-5" />
                 </Media>
 
-                <Media body className="my-auto">
+                <Media body className="my-auto ml-lg-5">
 
                     <Media heading>{member.memberName}</Media>
 
                     <h6>{member.designation}</h6>
-                    <b>{member.memberPhone}</b>
+                    <p className="font-weight-bolder mt-2">
+                        <span><i class="fa fa-mobile-phone mr-2" style={{ fontSize: "36px", verticalAlign: "middle", color: "#037ec0" }}></i>
+                            <strong style={{verticalAlign: "text-bottom", fontSize:"1.2rem"}}>{member.memberPhone}</strong></span></p>
 
-                    <div id="accordionElysium" className="details">
+                    <div id="accordionElysium" className="details mt-3">
                         <div className="card">
                             <AccordionHeader value={member} />
                             <AccordionBody value={member} />

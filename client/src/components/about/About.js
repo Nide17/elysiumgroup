@@ -1,5 +1,5 @@
 import React from 'react';
-import Clients from './Clients'
+// import Clients from './Clients'
 import Members from './Members'
 
 const About = () => {
@@ -57,15 +57,16 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="row">
+                <div className="row mt-lg-5">
+                    <h4 className="ml-2 mx-auto">Our Team</h4>
                     <div className="col-12 mt-2 members" style={{ display: "flex", justifyContent: "center" }}>
                         <Members />
                     </div>
                 </div>
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-12 elysium-clients"><Clients /></div>
-                </div>
+                </div> */}
 
             </div>
 

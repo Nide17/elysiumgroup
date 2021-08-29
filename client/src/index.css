@@ -38,7 +38,7 @@ body {
 .about-section,
 .clients-section,
 .contacts-section {
-  background: #edf5f7;
+  background: #f0f1f1;
 }
 
 .contact-container div.form-container {
@@ -733,6 +733,19 @@ ul.social-buttons li {
   margin-bottom: 0;
   background-color: rgba(248, 139, 139, 0.03);
   border-bottom: 1px solid rgba(201, 5, 5, 0.125);
+}
+
+.about-section #accordionElysium {
+  border: 1px solid rgb(240, 173, 78);
+}
+
+.about-section #accordionElysium .btn-link .fa {
+  color: rgb(240, 173, 78);
+}
+
+.about-section #accordionElysium .btn-link {
+  color: #037ec0;
+  font-weight: 900;
 }
 
 .about-section p {
@@ -1500,17 +1513,17 @@ h1.elysium-title {
   }
 
   .about-section .details {
-        line-height: 1;
-        font-size: .65rem;
+    line-height: 1;
+    font-size: .65rem;
   }
 
-  .about-section .details .btn{
+  .about-section .details .btn {
     line-height: 1.4;
     font-size: .8rem;
     color: #2a7fb8;
   }
 
-    .clients-section img {
-      width: 100%!important;
-    }
+  .clients-section img {
+    width: 100% !important;
+  }
 }
