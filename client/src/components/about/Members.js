@@ -55,7 +55,6 @@ const Members = ({ setMembers, members }) => {
                 </Media>
 
                 <Media body className="my-auto ml-lg-5">
-
                     <Media heading>{member.memberName}</Media>
 
                     <h6>{member.designation}</h6>

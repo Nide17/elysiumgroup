@@ -86,10 +86,34 @@ const Contact = () => {
                                 </div>
 
                                 <div className="form-group row">
+                                    <label htmlFor="contactSubject" className="col-form-label col-md-3">Name</label>
+
+                                    <div className="col-md-9">
+
+                                        <Control.text model=".subject"
+                                            id="subject" name="contactSubject" className="form-control" placeholder="Your subject" validators={{
+                                                required, minLength: minLength(4), maxLength: maxLength(80)
+                                            }} />
+
+                                        <Errors
+                                            className="text-danger"
+                                            model=".subject"
+                                            show="touched"
+                                            messages={{
+                                                required: 'Required! ',
+                                                minLength: 'Must be greater than 3 characters',
+                                                maxLength: 'Must be 80 characters or less'
+                                            }}
+                                        />
+
+                                    </div>
+                                </div>
+
+                                <div className="form-group row">
                                     <label htmlFor="contactMsg" className="col-form-label col-md-3">Message</label>
                                     <div className="col-md-9">
                                         <Control.textarea model=".message" id="contactMsg" name="contactMessage" rows="5" className="form-control" validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(100)
+                                            required, minLength: minLength(3), maxLength: maxLength(200)
                                         }} />
 
                                         <Errors
@@ -99,21 +123,9 @@ const Contact = () => {
                                             messages={{
                                                 required: 'Required! ',
                                                 minLength: 'Must be greater than 2 characters',
-                                                maxLength: 'Must be 100 characters or less'
+                                                maxLength: 'Must be 200 characters or less'
                                             }}
                                         />
-                                    </div>
-                                </div>
-
-                                <div className="form-group row">
-                                    <div className="col-md-3"></div>
-                                    <div className="col-md-9">
-                                        <div className="form-check">
-                                            <Control.checkbox model=".updates" id="updateCheck" name="updates" className="form-check-input" />
-                                            <label className="form-check-label" htmlFor="updateCheck">
-                                                Wish to receive updates from Elysium Group
-                                            </label>
-                                        </div>
                                     </div>
                                 </div>
 
