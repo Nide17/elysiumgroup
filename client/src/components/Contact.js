@@ -1,147 +1,116 @@
-import React from 'react';
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { Col, Form, Label, FormGroup, Input, Alert } from 'reactstrap';
+import { clearErrors } from '../redux/error/error.actions'
+import { sendMsg } from '../redux/contacts/contacts.actions'
 
-import { Control, Form, Errors } from 'react-redux-form';
-// actions
+const Contact = ({ clearErrors, error, sendMsg }) => {
+    // const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len);
-const minLength = (len) => (val) => val && (val.length >= len);
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+    const [state, setState] = useState({
+        contact_name: '',
+        email: '',
+        message: ''
+    })
 
-const Contact = () => {
+    const onChangeHandler = e => {
+        clearErrors();
+        const { name, value } = e.target
+        setState(state => ({ ...state, [name]: value }))
+    };
 
-    console.log(Errors);
-    const handleSubmit = (values) => {
+    const onContact = e => {
+        e.preventDefault();
 
-        console.log('Current State is: ' + JSON.stringify(values));
+        const { contact_name, email, subject, message } = state;
 
-        // postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
+        // Create user object
+        const contactMsg = {
+            contact_name,
+            email,
+            subject,
+            message
+        };
 
-        console.log(values);
+        // Attempt to contact
+        sendMsg(contactMsg);
 
-        // resetFeedbackForm();
+        // Reset fields
+        setState({
+            contact_name: '',
+            email: '',
+            subject: '',
+            message: ''
+        })
     }
 
-        return (
-            <section className="contacts-section">
-                <div className="container contact-container">
+    return (
+        <section className="contacts-section">
+            <div className="container contact-container">
 
-                    <div className="row">
+                <div className="row">
 
-                        <div className="col-12 elysium-title-wrapper">
-                            <h1 className="elysium-title">ELYSIUM GROUP</h1>
-                            <h3>Contact us</h3>
-                        </div>
+                    <div className="col-12 elysium-title-wrapper">
+                        <h1 className="elysium-title">ELYSIUM GROUP</h1>
+                        <h3>Contact us</h3>
+                    </div>
 
-                        <div className="col-12 form-container">
+                    <div className="col-12 form-container">
 
-                            <Form id="contactForm" model="contacts" onSubmit={(values) => handleSubmit(values)}>
+                        {error && error.id === "ADD_CONTACT_FAIL" ?
+                            <Alert color='danger'>
+                                <small>{error.msg.msg}</small>
+                            </Alert> :
+                            null
+                        }
 
-                                <div className="form-group row">
+                        <Form id="contactForm" model="contacts" onSubmit={onContact}>
 
-                                    <label htmlFor="contactEmail" className="col-form-label col-md-3">Email</label>
+                            <FormGroup row>
+                                <Label for="contact_name" sm={3}>Name</Label>
+                                <Col sm={9}>
+                                    <Input type="text" name="contact_name" placeholder="Your Name" minLength="4" maxLength="50" onChange={onChangeHandler} value={state.contact_name} required />
+                                </Col>
+                            </FormGroup>
 
-                                    <div className="col-md-9">
+                            <FormGroup row>
+                                <Label for="email" sm={3}>Email</Label>
+                                <Col sm={9}>
+                                    <Input type="text" name="email" placeholder="Your Email" minLength="4" maxLength="30" onChange={onChangeHandler} value={state.email} required />
+                                </Col>
+                            </FormGroup>
 
-                                        <Control.text model=".email" id="email" name="contactEmail" className="form-control" placeholder="Your e-mail" validators={{
-                                            required, validEmail
-                                        }} />
+                            <FormGroup row>
+                                <Label for="contactSubject" sm={3}>Subject</Label>
+                                <Col sm={9}>
+                                    <Input type="text" name="subject" placeholder="Your Subject" minLength="4" maxLength="80" onChange={onChangeHandler} value={state.subject} required />
+                                </Col>
+                            </FormGroup>
 
-                                        <Errors
-                                            className="text-danger"
-                                            model=".email"
-                                            show="touched"
-                                            messages={{
-                                                required: 'Required! ',
-                                                validEmail: 'Invalid Email Address'
-                                            }}
-                                        />
+                            <FormGroup row>
+                                <Label for="email" sm={3}>Message</Label>
+                                <Col sm={9}>
+                                    <Input type="textarea" name="message" placeholder="Your Message" minLength="10" maxLength="1000" onChange={onChangeHandler} value={state.message} required />
+                                </Col>
+                            </FormGroup>
 
-                                    </div>
-
+                            <div className="form-group row">
+                                <div className="col-md-3"></div>
+                                <div className="col-md-9">
+                                    <button type="submit" className="btn btn-primary">Submit</button>
                                 </div>
+                            </div>
 
-                                <div className="form-group row">
-                                    <label htmlFor="contactName" className="col-form-label col-md-3">Name</label>
+                        </Form>
 
-                                    <div className="col-md-9">
-
-                                        <Control.text model=".name"
-                                            id="name" name="contactName" className="form-control" placeholder="Your name" validators={{
-                                                required, minLength: minLength(3), maxLength: maxLength(30)
-                                            }} />
-
-                                        <Errors
-                                            className="text-danger"
-                                            model=".name"
-                                            show="touched"
-                                            messages={{
-                                                required: 'Required! ',
-                                                minLength: 'Must be greater than 2 characters',
-                                                maxLength: 'Must be 20 characters or less'
-                                            }}
-                                        />
-
-                                    </div>
-                                </div>
-
-                                <div className="form-group row">
-                                    <label htmlFor="contactSubject" className="col-form-label col-md-3">Name</label>
-
-                                    <div className="col-md-9">
-
-                                        <Control.text model=".subject"
-                                            id="subject" name="contactSubject" className="form-control" placeholder="Your subject" validators={{
-                                                required, minLength: minLength(4), maxLength: maxLength(80)
-                                            }} />
-
-                                        <Errors
-                                            className="text-danger"
-                                            model=".subject"
-                                            show="touched"
-                                            messages={{
-                                                required: 'Required! ',
-                                                minLength: 'Must be greater than 3 characters',
-                                                maxLength: 'Must be 80 characters or less'
-                                            }}
-                                        />
-
-                                    </div>
-                                </div>
-
-                                <div className="form-group row">
-                                    <label htmlFor="contactMsg" className="col-form-label col-md-3">Message</label>
-                                    <div className="col-md-9">
-                                        <Control.textarea model=".message" id="contactMsg" name="contactMessage" rows="5" className="form-control" validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(200)
-                                        }} />
-
-                                        <Errors
-                                            className="text-danger"
-                                            model=".message"
-                                            show="touched"
-                                            messages={{
-                                                required: 'Required! ',
-                                                minLength: 'Must be greater than 2 characters',
-                                                maxLength: 'Must be 200 characters or less'
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="form-group row">
-                                    <div className="col-md-3"></div>
-                                    <div className="col-md-9">
-                                        <button type="submit" className="btn btn-primary">Submit</button>
-                                    </div>
-                                </div>
-
-                            </Form>
-
-                        </div>
                     </div>
                 </div>
-            </section>);
-    }
+            </div>
+        </section>);
+}
 
-export default Contact;
+const mapStateToProps = state => ({
+    error: state.errorReducer
+})
+
+export default connect(mapStateToProps, { clearErrors, sendMsg })(Contact)

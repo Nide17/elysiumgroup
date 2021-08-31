@@ -4,8 +4,10 @@
 // bring express router for implementing routes in separate files
 const express = require("express");
 const router = express.Router();
-const auth = require('../../middleware/auth')
 const bcrypt = require('bcryptjs');
+
+// auth middleware to protect routes
+const { auth, authRole } = require('../../middleware/auth');
 
 const User = require('../../models/User')
 

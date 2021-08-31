@@ -14,13 +14,17 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    role: {
+        type: String,
+        required: true,
+        default: 'Visitor'
+    },
     avatar: {
         type: String
-    },
-    date: {
-        type: Date,
-        default: Date.now
     }
+}, {
+    // createdAt,updatedAt fields are automatically added into records
+    timestamps: true
 });
 
 // This creates our model from the above schema, using mongoose's model method

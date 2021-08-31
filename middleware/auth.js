@@ -1,23 +1,66 @@
-const jwt = require('jsonwebtoken')
-const config = require("config");
+const jwt = require("jsonwebtoken");
+const config = require('config')
 
-module.exports = function (req, res, next) {
-    // Get token from header
+const auth = async (req, res, next) => {
+
     const token = req.header('x-auth-token');
 
-    // check if no token
-    if (!token) {
-        return res.status(401).json({ msg: "No token, authorization denied!" });
-    }
+    // Check for token
+    if (!token)
+        return res.status(401).json({ msg: 'No token, authorizaton denied' });
 
-    // Verify token
     try {
-        const decoded = jwt.verify(token, config.get('jwtSecret'));
+        // Verify token
+        const decoded = await jwt.verify(token, process.env.JWT_SECRET || config.get('jwtSecret'));
 
-        req.user = decoded.user;
+        // Add user from payload
+        req.user = decoded;
         next();
 
-    } catch (err) {
-        res.status(401).json({ msg: "Token is not valid!" });
+    } catch (e) {
+        res.status(400).json({ msg: 'Token is not valid' });
     }
+
+};
+
+// ROLE
+const authRole = (roles) => (req, res, next) => {
+
+    const token = req.header('x-auth-token');
+    // Check for token
+    if (!token)
+        return res.status(401).json({ msg: 'No token, authorizaton denied' });
+
+    // Verify token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || config.get('jwtSecret'));
+
+    // Add user from payload
+    req.user = decoded;
+
+    if (!req.user) {
+        return res.status(401).json({
+            success: false,
+            message: 'Session expired',
+            code: 'SESSION_EXPIRED'
+        });
+    }
+
+    let authorized = false;
+
+    //if user has a role that is required to access any API
+    roles.forEach(rol => {
+        authorized = true;
+        console.log(`${rol} Allowed!`)
+    })
+
+    if (authorized) {
+        return next();
+    }
+
+    return res.status(401).json({
+        success: false,
+        msg: 'Unauthorized',
+    })
 }
+
+module.exports = { auth, authRole };

@@ -4,10 +4,12 @@ const mongoose = require('mongoose');
 const path = require('path');
 // const config = require('config')
 const connectDB = require('./config/db');
+const cors = require('cors')
 
 const app = express();
 
 // Init Middleware - deprecated body parser
+app.use(cors({origin: '*'}))
 app.use(express.json({ extended: false }))
 
 // Connect DB
@@ -35,6 +37,6 @@ if (process.env.NODE_ENV === 'production') {
     //Let's create a post build script in package.json
 }
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT} 🔥`));

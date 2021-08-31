@@ -8,8 +8,6 @@ const { auth, authRole } = require('../../middleware/auth');
 //Contact Model : use capital letters since it's a model
 const Contact = require('../../models/Contact');
 const User = require('../../models/User');
-const Broadcast = require('../../models/Broadcast');
-const SubscribedUser = require('../../models/SubscribedUser');
 
 // @route GET api/contacts
 // @route Get All contacts
@@ -34,8 +32,7 @@ router.get('/', async (req, res) => {
 
 // @route POST api/contacts
 // @route Create a Contact
-// @route Private: accessed by logged in user
-
+// @route Public
 router.post("/", async (req, res) => {
 
   try {
@@ -48,7 +45,7 @@ router.post("/", async (req, res) => {
     // Sending e-mail to contacted user
     sendEmail(
       newContact.email,
-      "Thank you for contacting Quiz Blog!",
+      "Thank you for contacting Elysium Group!",
       {
         name: newContact.contact_name,
       },
@@ -62,7 +59,8 @@ router.post("/", async (req, res) => {
         ad.email,
         "A new message, someone contacted us!",
         {
-          cEmail: newContact.email
+          cEmail: newContact.email,
+          cMessage: newContact.message
         },
         "./template/contactAdmin.handlebars");
     })
@@ -76,76 +74,6 @@ router.post("/", async (req, res) => {
       return res.status(400).send(err.errors);
     }
     res.status(500).send("Something went wrong");
-  }
-});
-
-// @route POST api/contacts
-// @route Create a Broadcast
-// @route Private: accessed by logged in user
-router.post("/broadcast", authRole(['Creator', 'Admin']), async (req, res) => {
-
-  const { title, sent_by, message } = req.body;
-
-  // Simple validation
-  if (!title || !sent_by || !message) {
-    return res.status(400).json({ msg: 'Please fill required fields' });
-  }
-
-  // Send email to subscribers of Category on Quiz creation
-  const subscribers = await SubscribedUser.find()
-  const allUsers = await User.find()
-  const clientURL = process.env.NODE_ENV === 'production' ?
-    'http://www.quizblog.rw' : 'http://localhost:3000'
-
-  try {
-    const newBroadcast = new Broadcast({
-      title,
-      sent_by,
-      message
-    });
-
-    const savedBroadcast = await newBroadcast.save();
-    if (!savedBroadcast) throw Error('Something went wrong during creation!');
-
-    res.status(200).json({
-      _id: savedBroadcast._id,
-      title: savedBroadcast.title,
-      sent_by: savedBroadcast.sent_by,
-      message: savedBroadcast.message,
-      createdAt: savedBroadcast.createdAt
-    });
-
-    // Sending a Broadcast
-    subscribers.forEach(sub => {
-
-      sendEmail(
-        sub.email,
-        req.body.title,
-        {
-          name: sub.name,
-          message: req.body.message,
-          unsubscribeLink: `${clientURL}/unsubscribe`
-        },
-        "./template/broadcast.handlebars");
-    });
-
-    allUsers.forEach(usr => {
-
-      sendEmail(
-        usr.email,
-        req.body.title,
-        {
-          name: usr.name,
-          message: req.body.message,
-          unsubscribeLink: `${clientURL}/unsubscribe`
-        },
-        "./template/broadcast.handlebars");
-    });
-
-    res.status(200).json({ msg: "Sent successfully!" });
-
-  } catch (err) {
-    res.status(400).json({ msg: err.message });
   }
 });
 
@@ -173,7 +101,7 @@ router.put('/:id', authRole(['Creator', 'Admin']), async (req, res) => {
 
   try {
 
-    // Update the Quiz on Contact updating
+    // Update the Elysium Group on Contact updating
     const contact = await Contact.updateOne(
       { "_id": req.params.id },
       { $push: { "replies": req.body } },
@@ -183,7 +111,7 @@ router.put('/:id', authRole(['Creator', 'Admin']), async (req, res) => {
     // Send Reply email
     sendEmail(
       req.body.to_contact,
-      "New message! Quiz Blog replied!",
+      "New message! Elysium Group replied!",
       {
         name: req.body.to_contact_name,
         question: req.body.contact_question,
