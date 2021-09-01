@@ -62,7 +62,7 @@ const Services = (props) => {
 
         <div className="row">
           <div className="col-12">
-            <h2 className="text-center py-3">Top Services</h2>
+            <h2 className="text-center py-3">Our Expertise</h2>
           </div>
         </div>
 

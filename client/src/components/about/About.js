@@ -13,13 +13,29 @@ const About = () => {
                     <div className="col-12 elysium-title-wrapper">
                         <h1 className="elysium-title">ELYSIUM GROUP</h1>
                         <h3>About us</h3>
-                        <p>ELYSIUM GROUP LTD has been established in November 2019 to provide Consultancy services in Architectural and Engineering activities and related technical
-                            consultancy, Consultancy in Project Management and Estate Construction, Consultancy in the field of construction, Control and supervision of works and real estate appraisals Research and experimental development on natural sciences
-                            and engineering, Technical testing and analysis and Specialized design activities.
-                            The firm is organized by team of professionals, whose contribution have already enriched the quality of services rendered by local as well as international firms, for providing exemplary high quality professional consultancy services to the required standard.
+
+                        <p>ELYSIUM GROUP LTD has been established in November 2019 to provide
+                            Consultancy services in Architectural and Engineering activities and related technical
+                            consultancy, Consultancy in Project Management and Estate Construction,
+                            Consultancy in the field of construction, Control and supervision of works and real
+                            estate appraisals Research and experimental development on natural sciences
+                            and engineering, Technical testing and analysis, Specialized design activities, ICT
+                            Consultancy, Business development and management consultancy, accounting,
+                            Auditing, book-keeping Consultancy and other scientific research.
                         </p>
 
-                        <p>The firm is organized to give clients the best possible service by developing the organization constantly to keep abreast of technological developments. The quality assurance procedures are very effective and they are updated regularly to match new requirements. ELYSIUM GROUP LTD places special emphasis on the ability of co-operation and synergetic innovation.</p>
+                        <p>The firm is organized by team of professionals, whose contribution have already
+                            enriched the quality of services rendered by local as well as international firms, for
+                            providing exemplary high quality professional consultancy services to the required
+                            standard.
+                        </p>
+
+                        <p>The firm is organized to give clients the best possible service by developing the
+                            organization constantly to keep abreast of technological developments. The quality
+                            assurance procedures are very effective and they are updated regularly to match
+                            new requirements.</p>
+
+                        <strong>ELYSIUM GROUP LTD places special emphasis on the ability of co-operation and synergetic innovation.</strong>
                     </div>
 
                 </div>

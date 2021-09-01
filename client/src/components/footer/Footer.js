@@ -39,7 +39,7 @@ const Footer = (props) => {
                     <div className="col-6 col-sm-6 col-xl-2 p-1">
                         <h4>Contacts</h4>
                         <ul>
-                            <li><i className="fa fa-phone fa-lg"></i>&nbsp;0788889242</li>
+                            <li><i className="fa fa-phone fa-lg"></i>&nbsp;(+250)788623823</li>
                             <li><i className="fa fa-envelope fa-md"></i>&nbsp;<small>elysiumgroup@gmail.com</small></li>
                             <li><i className="fa fa-map-marker"></i>&nbsp;<small>KK 40 St, Kigali</small></li>
                         </ul>
