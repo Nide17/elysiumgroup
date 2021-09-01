@@ -17,6 +17,7 @@ const Members = ({ setMembers, members }) => {
         const { memberName } = value
         const collapsedClass = clickedMember === memberName && collapsed ? "btn btn-link p-0 mx-auto" : 'btn btn-link p-0 mx-auto collapsed'
         const ariaExpanded = clickedMember === memberName && collapsed ? "true" : "false";
+        const biography = clickedMember === memberName && collapsed ? "Biography" : "View Biography";
         const plusIcon = clickedMember === memberName && collapsed ? "fa fa-minus" : "fa fa-plus";
 
         const collapseClick = () => {
@@ -28,7 +29,7 @@ const Members = ({ setMembers, members }) => {
             <div className="card-header w-100 m-0 p-1 d-flex justify-content-center" id={`heading${memberName && memberName.split(' ').join('-')}`} onClick={collapseClick}>
 
                 <button className={collapsedClass} data-toggle="collapse" data-target={`#collapse${memberName && memberName.split(' ').join('-')}`} aria-expanded={ariaExpanded} aria-controls={`collapse${memberName && memberName.split(' ').join('-')}`} onClick={collapseClick} >
-                    View Biography &nbsp;<i className={plusIcon}></i>
+                    {biography} &nbsp;<i className={plusIcon}></i>
                 </button>
             </div>)
     }
