@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
   try {
 
     const newContact = await Contact.create(req.body);
-    res.send(newContact);
+    const admins = await User.find({ role: 'Admin' }).select("email")
 
     if (!newContact) throw Error('Something went wrong!');
 
@@ -52,8 +52,6 @@ router.post("/", async (req, res) => {
       "./template/contact.handlebars");
 
     // Sending e-mail to admins
-    const admins = await User.find({ role: 'Admin' }).select("email")
-
     admins.forEach(ad => {
       sendEmail(
         ad.email,
@@ -64,8 +62,8 @@ router.post("/", async (req, res) => {
         },
         "./template/contactAdmin.handlebars");
     })
-
     res.status(200).json({ msg: "Sent successfully!" });
+    res.send(newContact);
 
   } catch (err) {
     console.log(err);

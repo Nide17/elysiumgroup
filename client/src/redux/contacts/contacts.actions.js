@@ -1,8 +1,8 @@
 import { GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT, ADD_CONTACT_FAIL, DELETE_CONTACT_FAIL, REPLY_CONTACT_FAIL, CONTACTS_LOADING, REPLY_CONTACT } from "./contacts.types";
 import axios from 'axios';
-
 import { tokenConfig } from '../auth/auth.actions'
 import { returnErrors } from "../error/error.actions";
+import { returnSuccess } from '../success/success.actions'
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:5001',
@@ -37,8 +37,10 @@ export const sendMsg = (contactMsg) => async (dispatch) => {
           type: ADD_CONTACT,
           payload: res.data
         }),
-        alert('Sending ...')
-      )
+        alert('Sending ...'))
+      .then(res =>
+        dispatch(returnSuccess('Message sent successfully!', 200, 'ADD_CONTACT')))
+
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'ADD_CONTACT_FAIL'));
     dispatch({ type: ADD_CONTACT_FAIL })

@@ -6,6 +6,7 @@ import servicesReducer from "./services/services.reducer";
 import projectsReducer from "./projects/projects.reducer";
 import appReducer from "./app/app.reducer";
 import membersReducer from "./members/members.reducer";
+import successReducer from "./success/success.reducer";
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   servicesReducer,
   projectsReducer,
   appReducer,
-  membersReducer
+  membersReducer,
+  successReducer
 });
 
 export default rootReducer;
