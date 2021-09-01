@@ -84,8 +84,7 @@ const Contact = ({ clearErrors, clearSuccess, errors, successful, sendMsg }) => 
                                 <Alert isOpen={visible} toggle={onDismiss} color="danger" key={Math.floor(Math.random() * 1000)}>
                                     {err}
                                 </Alert>) :
-                            null
-                        }
+                            null}
 
                         {/* Error backend */}
                         {errors.id ?
@@ -98,7 +97,7 @@ const Contact = ({ clearErrors, clearSuccess, errors, successful, sendMsg }) => 
                                 </Alert> : null
                         }
 
-                        <Form id="contactForm"  onSubmit={onContact}>
+                        <Form id="contactForm" onSubmit={onContact}>
 
                             <FormGroup row>
                                 <Label for="contact_name" sm={3}>Name</Label>

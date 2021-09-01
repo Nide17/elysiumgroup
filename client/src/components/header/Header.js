@@ -122,7 +122,7 @@ const Header = (props) => {
                                 className={menuServicesLinkClassName} 
                                 onClick={props.showServices}
                                     style={{ borderBottom: location.pathname === "/services" ? "2px solid #f0ad4e" : null }}>
-                                    Services
+                                    Expertise
                                 </a>
 
                                 <div className="submenu-wrapper" id="submenu-Services" style={{
@@ -134,9 +134,9 @@ const Header = (props) => {
 
                                         <div className="header-section__subnav">
                                             <span className="closer-mobile">
-                                                <button href="/#" className="closer" onClick={props.showServices}>
+                                                <button href="/services" className="closer" onClick={props.showServices}>
                                                     {/* header__subnav-control */}
-                                                    Services</button>
+                                                    Expertise</button>
                                             </span>
 
                                             <div className="submenu-cols">
@@ -159,7 +159,7 @@ const Header = (props) => {
                                 className={menuProjectsLinkClassName} 
                                 onClick={props.showProjects}
                                     style={{ borderBottom: location.pathname === "/projects" ? "2px solid #f0ad4e" : null }}>
-                                    Projects
+                                    Portfolio
                                 </a>
 
                                 <div className="submenu-wrapper" id="submenu-Projects" style={{
@@ -171,8 +171,8 @@ const Header = (props) => {
 
                                         <div className="header-section__subnav">
                                             <span className="closer-mobile">
-                                                <button href="/#" className="closer" onClick={props.showProjects}>
-                                                    Projects
+                                                <button href="/projects" className="closer" onClick={props.showProjects}>
+                                                    Portfolio
                                                 </button>
                                             </span>
 
