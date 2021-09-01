@@ -26,7 +26,7 @@ const membersData = [
     {
         id: 1,
         memberName: 'UWASE Patience',
-        designation: 'Chief Finance Officer',
+        designation: 'Chief Finance Officer (CFO)',
         memberImage: patienceImg,
         memberEducation: "BBA. Accounting",
         memberPhone: '0786689117',
