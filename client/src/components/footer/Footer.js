@@ -61,8 +61,8 @@ const Footer = (props) => {
                     <div className="col-5 col-sm-3 col-xl-1 mt-3 mt-lg-0">
                         <h4>Explore</h4>
                         <ul className="list-unstyled d-flex flex-column justify-content-start">
-                            <li><a href="/#services">Services</a></li>
-                            <li><a href="/#projects">Projects</a></li>
+                            <li><a href="/#services">Expertise</a></li>
+                            <li><a href="/#projects">Portfolio</a></li>
                             <li><a href="/about">About us</a></li>
                         </ul>
                     </div>
