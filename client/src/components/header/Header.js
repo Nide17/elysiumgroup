@@ -118,9 +118,9 @@ const Header = (props) => {
                             </li>
 
                             <li>
-                                <a href="/" 
+                                <a href="/services"
                                 className={menuServicesLinkClassName} 
-                                onClick={props.showServices}
+
                                     style={{ borderBottom: location.pathname === "/services" ? "2px solid #f0ad4e" : null }}>
                                     Expertise
                                 </a>

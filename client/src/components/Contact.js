@@ -123,7 +123,7 @@ const Contact = ({ clearErrors, clearSuccess, errors, successful, sendMsg }) => 
                             <FormGroup row>
                                 <Label for="email" sm={3}>Message</Label>
                                 <Col sm={9}>
-                                    <Input type="textarea" name="message" placeholder="Your Message" minLength="10" maxLength="1000" onChange={onChangeHandler} value={state.message} />
+                                    <Input type="textarea" name="message" placeholder="Your Message" minLength="10" maxLength="1000" onChange={onChangeHandler} value={state.message} rows="5" />
                                 </Col>
                             </FormGroup>
 

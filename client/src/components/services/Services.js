@@ -2,14 +2,15 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setServices } from "../../redux/services/services.actions";
 
-const Services = (props) => {
+const Services = ({ setServices, services }) => {
 
   useEffect(() => {
     // Inside this callback function we perform our side effects.
-    props.setServices();
+    setServices();
   });
 
-  const allServices = props.services.map((service) => {
+  const allServices = services.map((service) => {
+
     // Destructuring service object
     const { id, sName, sSrc, sDetails, sTitle } = service;
 
@@ -17,12 +18,10 @@ const Services = (props) => {
 
       <div className="col-12 col-sm-6 col-xl-3 mb-3" key={id}>
 
-        <div className="card card-body bg-light py-0" id={sTitle}>
+        <div className="card card-body py-0" id={sTitle}>
 
           <div className="card-header">
-            <h6 className="text-center text-uppercase">
-              <strong>{sName}</strong>
-            </h6>
+              <strong className="text-center text-uppercase">{sName}</strong>
           </div>
 
           <img
@@ -34,19 +33,19 @@ const Services = (props) => {
           <div
             className="card-img-overlay"
           >
-            <button type="button" className="btn btn-outline-warning btn-sm">
-              Go to details
+            <button type="button" className="btn btn-outline-warning btn-sm text-uppercase font-weight-bolder">
+              <a href="/#" className="text-warning">View details</a>
             </button>
           </div>
 
           <div className="brief-info p-2">
-            {sDetails.length >= 95 ? (
+            {/* {sDetails.length >= 95 ? (
               <p>
                 {sDetails.slice(0, 93)}&nbsp;<a href="/">read more...</a>
               </p>
-            ) : (
+            ) : ( */}
                 <p> {sDetails}</p>
-              )}
+              {/* )} */}
           </div>
 
         </div>
@@ -56,13 +55,13 @@ const Services = (props) => {
   });
 
   return (
-    <section className="services-section" id="services">
+    <section className="services-section py-0 py-lg-4" id="services">
 
       <div className="services-container container">
 
         <div className="row">
           <div className="col-12">
-            <h2 className="text-center py-3">Our Expertise</h2>
+            <h2 className="text-center py-3 font-weight-bolder">Our Expertise</h2>
           </div>
         </div>
 
@@ -73,16 +72,8 @@ const Services = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    services: state.servicesReducer.dataServices,
-  };
-};
+const mapStateToProps = state => ({
+  services: state.servicesReducer.dataServices,
+})
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setServices: () => dispatch(setServices()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Services);
+export default connect(mapStateToProps, { setServices })(Services)
